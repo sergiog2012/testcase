@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: test-case
+  data:
+    mongodb:
+      database: sensors
+      port: 27017
+      host: localhost
+
+server:
+  port: 8090
+  servlet:
+    context-path: /test-case
+
