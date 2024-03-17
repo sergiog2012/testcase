@@ -7,8 +7,6 @@ import com.garcia.sergio.testcase.infrastructure.mongo.dto.MongoSensor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -23,9 +21,11 @@ public class MongoSensorRepository implements SensorRepository {
 
     @Override
     public List<Sensor> findAll(){
-        List<MongoSensor> sensors = mongoTemplate.find(new Query(Criteria.where("_id").exists(true)), MongoSensor.class);
+        List<MongoSensor> mongoSensors = mongoTemplate.findAll(MongoSensor.class);
 
-        return sensors.stream()
+        log.debug("*** Sensor events found: {}", mongoSensors);
+
+        return mongoSensors.stream()
                 .map(sensorMapper::toDomain)
                 .toList();
     }
@@ -34,6 +34,8 @@ public class MongoSensorRepository implements SensorRepository {
     public Sensor save(Sensor sensor) {
         MongoSensor mongoSensor = sensorMapper.toMongo(sensor);
         MongoSensor mongoSensorPersisted = mongoTemplate.save(mongoSensor);
+
+        log.debug("*** Sensor event stored: {}", mongoSensor);
 
         return sensorMapper.toDomain(mongoSensorPersisted);
     }

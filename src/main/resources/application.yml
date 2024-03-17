@@ -12,3 +12,6 @@ server:
   servlet:
     context-path: /test-case
 
+logging:
+  level:
+    com.garcia.sergio.testcase.infrastructure.mongo: DEBUG
