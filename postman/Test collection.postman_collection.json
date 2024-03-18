@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "2d432ba8-8be5-4f7a-8ffc-ff341ddcdf36",
+		"name": "Test collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5135910"
+	},
+	"item": [
+		{
+			"name": "sensor-events",
+			"item": [
+				{
+					"name": "GET all sensors",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL}}/test-case/api/sensor-events",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"test-case",
+								"api",
+								"sensor-events"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET all sensors",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{URL}}/test-case/api/sensor-events",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"test-case",
+										"api",
+										"sensor-events"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Mar 2024 08:23:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"65f556956fd91871cd268072\",\n        \"sensorId\": \"sensor_1\",\n        \"timestamp\": \"2024-02-15T12:34:56.000+00:00\",\n        \"type\": \"temperature\",\n        \"value\": 21.6\n    },\n    {\n        \"id\": \"65f556956fd91871cd268073\",\n        \"sensorId\": \"sensor_2\",\n        \"timestamp\": \"2024-02-15T12:34:56.000+00:00\",\n        \"type\": \"temperature\",\n        \"value\": 25.3\n    },\n    {\n        \"id\": \"65f556956fd91871cd268074\",\n        \"sensorId\": \"sensor_3\",\n        \"timestamp\": \"2024-02-15T12:34:56.000+00:00\",\n        \"type\": \"temperature\",\n        \"value\": 20.1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "POST a sensor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sensorId\": \"sensor_11\",\n    \"timestamp\": \"2024-02-15T13:34:56Z\",\n    \"type\": \"temperature\",\n    \"value\": 21.6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/test-case/api/sensor-events",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"test-case",
+								"api",
+								"sensor-events"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST a sensor",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"sensorId\": \"sensor_11\",\n    \"timestamp\": \"2024-02-15T13:34:56Z\",\n    \"type\": \"temperature\",\n    \"value\": 21.6\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/test-case/api/sensor-events",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"test-case",
+										"api",
+										"sensor-events"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 17 Mar 2024 08:49:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"65f6ae9aa862b15d23321b11\",\n    \"sensorId\": \"sensor_11\",\n    \"timestamp\": \"2024-02-15T13:34:56Z\",\n    \"type\": \"temperature\",\n    \"value\": 21.6\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GET openapi",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{URL}}/test-case/v3/api-docs",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"test-case",
+						"v3",
+						"api-docs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET openapi2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{URL}}/test-case/v3/api-docs.yaml",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"test-case",
+						"v3",
+						"api-docs.yaml"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
