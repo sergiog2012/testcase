@@ -1,10 +1,6 @@
 spring:
   application:
     name: test-case
-#  data:
-#    mongodb:
-#      database: test
-#      host: localhost
 
 server:
   port: 8090
